@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MethodsService } from './methods.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'manyModules';
+
+  public name: string;
+
+  constructor(private _methodsService: MethodsService) {
+    this.name = this._methodsService.returnString();
+  }
+
 }
